@@ -16,139 +16,138 @@ using System.Collections;
 
 namespace IndustrialLogic.CreationMethod
 {
-	public class Loan
-	{
-		/// Use NO_DATE to indicate that no date is set (the equivalent of 'null Date' in Java)
-		public static readonly DateTime NO_DATE = DateTime.MaxValue;
+    public class Loan
+    {
+        /// Use NO_DATE to indicate that no date is set (the equivalent of 'null Date' in Java)
+        public static readonly DateTime NO_DATE = DateTime.MaxValue;
 
-		private double commitment;
-		private double outstanding;
-		private int riskRating;
-		private DateTime maturity;
-		private DateTime expiry;
-		private DateTime start;
-		private DateTime today = NO_DATE;
-		private IList payments = new ArrayList();
-		private double unusedPercentage;
-		private CapitalStrategy capitalStrategy;
+        private double commitment;
+        private double outstanding;
+        private int riskRating;
+        private DateTime maturity;
+        private DateTime expiry;
+        private DateTime start;
+        private DateTime today = NO_DATE;
+        private IList payments = new ArrayList();
+        private double unusedPercentage;
+        private CapitalStrategy capitalStrategy;
 
-		public Loan(double commitment, int riskRating, DateTime maturity) :
-			this(commitment, 0.00, riskRating, maturity, NO_DATE)
-		{
-		}
+        public static Loan CreateRCTLoan(double commitment, double outstanding, int customerRating, DateTime maturity, DateTime expiry)
+        {
+            return new Loan(null, commitment, outstanding, customerRating, maturity, expiry);
+        }
 
-		public Loan(double commitment, int riskRating, DateTime maturity, DateTime expiry) :
-			this(commitment, 0.00, riskRating, maturity, expiry)
-		{
-		}
+        public static Loan CreateTermLoan(double commitment, int riskRating, DateTime maturity)
+        {
+            return new Loan(null, commitment, 0.00, riskRating, maturity, NO_DATE);
+        }
 
-		public Loan(double commitment, double outstanding,
-		            int customerRating, DateTime maturity, DateTime expiry) :
-		            	this(null, commitment, outstanding, customerRating, maturity, expiry)
-		{
-		}
+        public static Loan CreateRevolverLoan(double commitment, int riskRating, DateTime maturity, DateTime expiry)
+        {
+            return new Loan(null, commitment, 0.00, riskRating, maturity, expiry);
+        }
 
-		public Loan(CapitalStrategy capitalStrategy, double commitment,
-		            int riskRating, DateTime maturity, DateTime expiry) :
-		            	this(capitalStrategy, commitment, 0.00, riskRating, maturity, expiry)
-		{
-		}
+        public static Loan CreateTermLoan(CapitalStrategy strategy, double commitment, int riskRating, DateTime maturity)
+        {
+            return new Loan(strategy, commitment, 0.00, riskRating, maturity, NO_DATE);
+        }
 
-		public Loan(CapitalStrategy capitalStrategy, double commitment,
-		            double outstanding, int riskRating,
-		            DateTime maturity, DateTime expiry)
-		{
-			this.commitment = commitment;
-			this.outstanding = outstanding;
-			this.riskRating = riskRating;
-			this.maturity = maturity;
-			this.expiry = expiry;
-			this.capitalStrategy = capitalStrategy;
+        private Loan(CapitalStrategy capitalStrategy, double commitment,
+                    double outstanding, int riskRating,
+                    DateTime maturity, DateTime expiry)
+        {
+            this.commitment = commitment;
+            this.outstanding = outstanding;
+            this.riskRating = riskRating;
+            this.maturity = maturity;
+            this.expiry = expiry;
+            this.capitalStrategy = capitalStrategy;
 
-			if (capitalStrategy == null)
-			{
-				if (expiry == NO_DATE)
-					this.capitalStrategy = new CapitalStrategyTermLoan();
-				else if (maturity == NO_DATE)
-					this.capitalStrategy = new CapitalStrategyRevolver();
-				else
-					this.capitalStrategy = new CapitalStrategyRCTL();
-			}
-		}
+            if (capitalStrategy == null)
+            {
+                if (expiry == NO_DATE)
+                    this.capitalStrategy = new CapitalStrategyTermLoan();
+                else if (maturity == NO_DATE)
+                    this.capitalStrategy = new CapitalStrategyRevolver();
+                else
+                    this.capitalStrategy = new CapitalStrategyRCTL();
+            }
+        }
 
-		public double Capital
-		{
-			get { return capitalStrategy.Capital(this); }
-		}
+        public double Capital
+        {
+            get { return capitalStrategy.Capital(this); }
+        }
 
-		public double OutstandingRiskAmount
-		{
-			get { return outstanding; }
-			set { this.outstanding = value; }
-		}
+        public double OutstandingRiskAmount
+        {
+            get { return outstanding; }
+            set { this.outstanding = value; }
+        }
 
-		internal double UnusedRiskAmount
-		{
-			get { return (Commitment - OutstandingRiskAmount); }
-		}
+        internal double UnusedRiskAmount
+        {
+            get { return (Commitment - OutstandingRiskAmount); }
+        }
 
-		public double Duration
-		{
-			get { return capitalStrategy.Duration(this); }
-		}
+        public double Duration
+        {
+            get { return capitalStrategy.Duration(this); }
+        }
 
-		public double UnusedPercentage
-		{
-			get { return unusedPercentage; }
-			set { this.unusedPercentage = value; }
-		}
+        public double UnusedPercentage
+        {
+            get { return unusedPercentage; }
+            set { this.unusedPercentage = value; }
+        }
 
-		internal DateTime Expiry
-		{
-			get { return expiry; }
-		}
+        internal DateTime Expiry
+        {
+            get { return expiry; }
+        }
 
-		internal DateTime Maturity
-		{
-			get { return maturity; }
-		}
+        internal DateTime Maturity
+        {
+            get { return maturity; }
+        }
 
-		internal double Commitment
-		{
-			get { return commitment; }
-		}
+        internal double Commitment
+        {
+            get { return commitment; }
+        }
 
-		internal int RiskRating
-		{
-			get { return riskRating; }
-		}
+        internal int RiskRating
+        {
+            get { return riskRating; }
+        }
 
-		public DateTime StartDate
-		{
-			get { return start; }
-			set { this.start = value; }
-		}
+        public DateTime StartDate
+        {
+            get { return start; }
+            set { this.start = value; }
+        }
 
-		internal DateTime Today
-		{
-			get { return today; }
-		}
+        internal DateTime Today
+        {
+            get { return today; }
+        }
 
-		internal IList Payments
-		{
-			get { return payments; }
-		}
+        internal IList Payments
+        {
+            get { return payments; }
+        }
 
-		public void Payment(double paymentAmount, DateTime paymentDate)
-		{
-			Payment payment = new Payment(paymentAmount, paymentDate);
-			outstanding = outstanding - payment.Amount;
-			payments.Add(payment);
-		}
+        public void Payment(double paymentAmount, DateTime paymentDate)
+        {
+            Payment payment = new Payment(paymentAmount, paymentDate);
+            outstanding = outstanding - payment.Amount;
+            payments.Add(payment);
+        }
 
-		public void SetStrategy(CapitalStrategy strategy)
-		{
-			this.capitalStrategy = strategy;
-		}
-	}
+        public void SetStrategy(CapitalStrategy strategy)
+        {
+            this.capitalStrategy = strategy;
+        }
+
+    }
 }
