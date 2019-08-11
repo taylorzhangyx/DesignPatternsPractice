@@ -18,6 +18,7 @@ namespace Industriallogic.FactoryMethod
     {
         private XmlElement element;
 
+
         public ElementAdapter(XmlElement element)
         {
             this.element = element;
@@ -31,7 +32,7 @@ namespace Industriallogic.FactoryMethod
 
         public void Add(XmlNode childNode)
         {
-            element.AppendChild(((ElementAdapter) childNode).Element);
+            element.AppendChild(((ElementAdapter)childNode).Element);
         }
 
         public void AddValue(String textNode)
