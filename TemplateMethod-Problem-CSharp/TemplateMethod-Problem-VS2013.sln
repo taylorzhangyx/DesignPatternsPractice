@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+Project("{C53992D8-C1FF-489F-B053-A5C558E123CA}") = "TemplateMethod.Tests", "TemplateMethod.Tests/TemplateMethod.Tests-VS2013.csproj", "{377F2118-ED3F-4E79-89B2-B0A020C7691A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FCF4AF59-106A-4329-A514-22A77B7173A6} = {FCF4AF59-106A-4329-A514-22A77B7173A6}
+	EndProjectSection
+EndProject
+Project("{C53992D8-C1FF-489F-B053-A5C558E123CA}") = "TemplateMethod", "TemplateMethod/TemplateMethod-VS2013.csproj", "{FCF4AF59-106A-4329-A514-22A77B7173A6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{377F2118-ED3F-4E79-89B2-B0A020C7691A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{377F2118-ED3F-4E79-89B2-B0A020C7691A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCF4AF59-106A-4329-A514-22A77B7173A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCF4AF59-106A-4329-A514-22A77B7173A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 14.00
+# Visual Studio 2015
+Project("{B637ED63-B71D-4B3D-A129-0BA21BE60A8B}") = "TemplateMethod.Tests", "TemplateMethod.Tests/TemplateMethod.Tests-VS2015.csproj", "{FCDABC5F-0BC9-481A-A814-361554D348F3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CB0FEDDB-ABCC-497E-B816-A71A032E5508} = {CB0FEDDB-ABCC-497E-B816-A71A032E5508}
+	EndProjectSection
+EndProject
+Project("{B637ED63-B71D-4B3D-A129-0BA21BE60A8B}") = "TemplateMethod", "TemplateMethod/TemplateMethod-VS2015.csproj", "{CB0FEDDB-ABCC-497E-B816-A71A032E5508}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FCDABC5F-0BC9-481A-A814-361554D348F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCDABC5F-0BC9-481A-A814-361554D348F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB0FEDDB-ABCC-497E-B816-A71A032E5508}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB0FEDDB-ABCC-497E-B816-A71A032E5508}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
