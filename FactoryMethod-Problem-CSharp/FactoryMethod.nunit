@@ -1,0 +1,7 @@
+<NUnitProject>
+	<Settings activeconfig="Debug" />
+	<Config name="Debug" binpathtype="Auto">
+		<assembly path="FactoryMethod.Tests\bin\Debug\FactoryMethod.Tests.dll" />
+	</Config>
+	<Config name="Release" binpathtype="Auto" />
+</NUnitProject>

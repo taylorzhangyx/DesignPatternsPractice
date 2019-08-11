@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 14.00
+# Visual Studio 2015
+Project("{75EBA7B4-2AF6-4001-9345-8E9A450D7108}") = "FactoryMethod.Tests", "FactoryMethod.Tests/FactoryMethod.Tests-VS2015.csproj", "{A1DCEBB2-EE21-4D56-8688-F0238CF2BA96}"
+	ProjectSection(ProjectDependencies) = postProject
+		{56282678-ED83-4A59-9436-BEA769C7C60B} = {56282678-ED83-4A59-9436-BEA769C7C60B}
+	EndProjectSection
+EndProject
+Project("{75EBA7B4-2AF6-4001-9345-8E9A450D7108}") = "FactoryMethod", "FactoryMethod/FactoryMethod-VS2015.csproj", "{56282678-ED83-4A59-9436-BEA769C7C60B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1DCEBB2-EE21-4D56-8688-F0238CF2BA96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1DCEBB2-EE21-4D56-8688-F0238CF2BA96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56282678-ED83-4A59-9436-BEA769C7C60B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56282678-ED83-4A59-9436-BEA769C7C60B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
