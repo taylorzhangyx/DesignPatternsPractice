@@ -18,21 +18,6 @@ namespace IndustrialLogic.CreationMethod
 {
     public class Loan
     {
-        public static Loan CreateRCTLoan(double commitment, double outstanding, int customerRating, DateTime maturity, DateTime expiry)
-        {
-            return new Loan(null, commitment, outstanding, customerRating, maturity, expiry);
-        }
-
-        public static Loan CreateTermLoan(double commitment, int riskRating, DateTime maturity)
-        {
-            return CreateRCTLoan(commitment, 0.00, riskRating, maturity, NO_DATE);
-        }
-
-        public static Loan CreateRevolverLoan(double commitment, int riskRating, DateTime maturity, DateTime expiry)
-        {
-            return CreateRCTLoan(commitment, 0.00, riskRating, maturity, expiry);
-        }
-
         /// Use NO_DATE to indicate that no date is set (the equivalent of 'null Date' in Java)
         public static readonly DateTime NO_DATE = DateTime.MaxValue;
 
@@ -47,7 +32,27 @@ namespace IndustrialLogic.CreationMethod
         private double unusedPercentage;
         private CapitalStrategy capitalStrategy;
 
-        public Loan(CapitalStrategy capitalStrategy, double commitment,
+        public static Loan CreateRCTLoan(double commitment, double outstanding, int customerRating, DateTime maturity, DateTime expiry)
+        {
+            return new Loan(null, commitment, outstanding, customerRating, maturity, expiry);
+        }
+
+        public static Loan CreateTermLoan(double commitment, int riskRating, DateTime maturity)
+        {
+            return new Loan(null, commitment, 0.00, riskRating, maturity, NO_DATE);
+        }
+
+        public static Loan CreateRevolverLoan(double commitment, int riskRating, DateTime maturity, DateTime expiry)
+        {
+            return new Loan(null, commitment, 0.00, riskRating, maturity, expiry);
+        }
+
+        public static Loan CreateTermLoan(CapitalStrategy strategy, double commitment, int riskRating, DateTime maturity)
+        {
+            return new Loan(strategy, commitment, 0.00, riskRating, maturity, NO_DATE);
+        }
+
+        private Loan(CapitalStrategy capitalStrategy, double commitment,
                     double outstanding, int riskRating,
                     DateTime maturity, DateTime expiry)
         {
@@ -143,5 +148,6 @@ namespace IndustrialLogic.CreationMethod
         {
             this.capitalStrategy = strategy;
         }
+
     }
 }

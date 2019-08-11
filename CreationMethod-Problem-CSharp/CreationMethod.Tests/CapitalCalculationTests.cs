@@ -65,8 +65,7 @@ namespace IndustrialLogic.CreationMethod
             double riskAdjustment = 1.25;
             CapitalStrategy riskAdjustedCapitalStrategy = new RiskAdjustedCapitalStrategy(riskAdjustment);
             Loan termLoan =
-                Loan.CreateTermLoan(LOAN_AMOUNT, HIGH_RISK_RATING, maturity);
-            termLoan.SetStrategy(riskAdjustedCapitalStrategy);
+                Loan.CreateTermLoan(riskAdjustedCapitalStrategy, LOAN_AMOUNT, HIGH_RISK_RATING, maturity);
             termLoan.StartDate = start;
             termLoan.Payment(1000.00, November(20, 2004));
             termLoan.Payment(1000.00, November(20, 2005));
