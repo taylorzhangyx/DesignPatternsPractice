@@ -1,0 +1,55 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+	<PropertyGroup>
+		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+		<ProjectGuid>{69A32087-B331-4C50-989E-5F226AC3C2E3}</ProjectGuid>
+		<OutputType>Library</OutputType>
+		<AppDesignerFolder>Properties</AppDesignerFolder>
+		<RootNamespace>IndustrialLogic.CreationMethod</RootNamespace>
+		<AssemblyName>CreationMethod.Tests</AssemblyName>
+		<StartupObject></StartupObject>
+		<FileUpgradeFlags></FileUpgradeFlags>
+		<UpgradeBackupLocation></UpgradeBackupLocation>
+		<OldToolsVersion>3.5</OldToolsVersion>
+		<TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+		</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' "	>
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+		<Optimize>false</Optimize>
+		<OutputPath>bin\Debug\</OutputPath>
+		<DefineConstants>DEBUG;TRACE</DefineConstants>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+		</PropertyGroup>
+	<ItemGroup>
+		<Reference Include="nunit.framework, Version=2.6.2.12296, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>..\lib\nunit.framework.dll</HintPath>
+			</Reference>
+		<Reference Include="System" />
+	<Reference Include="System.XML" />
+</ItemGroup>
+<ItemGroup>
+	<Compile Include="CapitalCalculationTests.cs" />
+	</ItemGroup>
+<ItemGroup>
+	</ItemGroup>
+<ItemGroup>
+	<ProjectReference Include="..\CreationMethod\CreationMethod-VS2017.csproj">
+	<Project>{86CAE2D6-5C33-432C-83DB-B89CCEBCEC86}</Project>
+	<Name>CreationMethod-VS2017</Name>
+	</ProjectReference>
+</ItemGroup>
+<ItemGroup>
+	<Folder Include="Properties" />
+</ItemGroup>
+<Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+<!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+	Other similar extension points exist, see Microsoft.Common.targets.
+<Target Name="BeforeBuild">
+</Target>
+<Target Name="AfterBuild">
+</Target>
+-->
+</Project>

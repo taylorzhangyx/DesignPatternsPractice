@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+Project("{2D6C5982-A163-4127-9585-15D9D8DE0DDF}") = "CreationMethod.Tests", "CreationMethod.Tests/CreationMethod.Tests-VS2013.csproj", "{7F77E5C9-B37F-452F-A28E-F13D7AAB24A6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{70214535-2456-4277-9566-B182A6388CBF} = {70214535-2456-4277-9566-B182A6388CBF}
+	EndProjectSection
+EndProject
+Project("{2D6C5982-A163-4127-9585-15D9D8DE0DDF}") = "CreationMethod", "CreationMethod/CreationMethod-VS2013.csproj", "{70214535-2456-4277-9566-B182A6388CBF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7F77E5C9-B37F-452F-A28E-F13D7AAB24A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F77E5C9-B37F-452F-A28E-F13D7AAB24A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70214535-2456-4277-9566-B182A6388CBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70214535-2456-4277-9566-B182A6388CBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

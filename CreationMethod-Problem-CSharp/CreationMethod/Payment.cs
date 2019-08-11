@@ -1,0 +1,39 @@
+/// ***************************************************************************
+/// Copyright (c) 2009, Industrial Logic, Inc., All Rights Reserved.
+///
+/// This code is the exclusive property of Industrial Logic, Inc. It may ONLY be
+/// used by students during Industrial Logic's workshops or by individuals
+/// who are being coached by Industrial Logic on a project.
+///
+/// This code may NOT be copied or used for any other purpose without the prior
+/// written consent of Industrial Logic, Inc.
+/// ****************************************************************************
+
+//$CopyrightHeader()$
+
+using System;
+
+namespace IndustrialLogic.CreationMethod
+{
+	internal class Payment
+	{
+		private double amount;
+		private DateTime date;
+
+		internal Payment(double amount, DateTime date)
+		{
+			this.amount = amount;
+			this.date = date;
+		}
+
+		public double Amount
+		{
+			get { return amount; }
+		}
+
+		public DateTime Date
+		{
+			get { return date; }
+		}
+	}
+}
