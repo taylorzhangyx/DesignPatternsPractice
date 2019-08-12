@@ -25,11 +25,57 @@ namespace Industriallogic.FactoryMethod
         protected XmlNode parent;
         protected XmlNode current;
 
-        public abstract void AddAbove(string uncle);
-        public abstract void AddAttribute(string name, string value);
-        public abstract void AddBelow(string child);
-        public abstract void AddBeside(string sibling);
-        public abstract void AddValue(string value);
-        public abstract void StartNewBuild(string rootName);
+        public abstract XmlNode CreateNode(string value);
+
+        protected abstract void Init(String rootName);
+
+
+        public virtual void AddAbove(String uncle)
+        {
+            if (current == root)
+                throw new SystemException(CANNOT_ADD_ABOVE_ROOT);
+            history.Pop();
+            bool atRootNode = (history.Count == 1);
+            if (atRootNode)
+                throw new SystemException(CANNOT_ADD_ABOVE_ROOT);
+            history.Pop();
+            current = history.Peek();
+            AddBelow(uncle);
+        }
+
+        public virtual void AddAttribute(String name, String value)
+        {
+            current.AddAttribute(name, value);
+        }
+
+        public virtual void AddBelow(String child)
+        {
+            XmlNode childNode = CreateNode(child);
+            current.Add(childNode);
+            parent = current;
+            current = childNode;
+            history.Push(current);
+        }
+
+        public virtual void AddBeside(String sibling)
+        {
+            if (current == root)
+                throw new SystemException(CANNOT_ADD_BESIDE_ROOT);
+            XmlNode siblingNode = CreateNode(sibling);
+            parent.Add(siblingNode);
+            current = siblingNode;
+            history.Pop();
+            history.Push(current);
+        }
+
+        public virtual void AddValue(String value)
+        {
+            current.AddValue(value);
+        }
+
+        public virtual void StartNewBuild(String rootName)
+        {
+            Init(rootName);
+        }
     }
 }
