@@ -1,0 +1,111 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+	<PropertyGroup>
+		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+		<ProjectGuid>{93EA16C4-544C-4C9B-A964-70B0658C260F}</ProjectGuid>
+		<OutputType>Library</OutputType>
+		<AppDesignerFolder>Properties</AppDesignerFolder>
+		<RootNamespace>IndustrialLogic.AbstractFactory</RootNamespace>
+		<AssemblyName>AbstractFactory</AssemblyName>
+		<StartupObject></StartupObject>
+		<FileUpgradeFlags></FileUpgradeFlags>
+		<UpgradeBackupLocation></UpgradeBackupLocation>
+		<OldToolsVersion>3.5</OldToolsVersion>
+		<TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+		</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' "	>
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+		<Optimize>false</Optimize>
+		<OutputPath>bin\Debug\</OutputPath>
+		<DefineConstants>DEBUG;TRACE</DefineConstants>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+		</PropertyGroup>
+	<ItemGroup>
+		<Reference Include="System" />
+	<Reference Include="System.XML" />
+</ItemGroup>
+<ItemGroup>
+	<Compile Include="scanners\FormScanner.cs" />
+	<Compile Include="scanners\FrameScanner.cs" />
+	<Compile Include="tags\ImageTag.cs" />
+	<Compile Include="decorators\DecodingNode.cs" />
+	<Compile Include="tags\FrameTag.cs" />
+	<Compile Include="util\SimpleNodeIterator.cs" />
+	<Compile Include="util\Translate.cs" />
+	<Compile Include="Node.cs" />
+	<Compile Include="SupportClass.cs" />
+	<Compile Include="util\ParserException.cs" />
+	<Compile Include="scanners\TitleScanner.cs" />
+	<Compile Include="tags\HeadTag.cs" />
+	<Compile Include="util\FeedbackManager.cs" />
+	<Compile Include="tags\TitleTag.cs" />
+	<Compile Include="tags\data\FormData.cs" />
+	<Compile Include="scanners\BulletListScanner.cs" />
+	<Compile Include="Parser.cs" />
+	<Compile Include="tags\BulletList.cs" />
+	<Compile Include="RemarkNode.cs" />
+	<Compile Include="scanners\CompositeTagScanner.cs" />
+	<Compile Include="visitors\TextExtractingVisitor.cs" />
+	<Compile Include="scanners\LinkScanner.cs" />
+	<Compile Include="tags\EndTag.cs" />
+	<Compile Include="tags\LinkTag.cs" />
+	<Compile Include="util\DefaultParserFeedback.cs" />
+	<Compile Include="parserHelper\TagParser.cs" />
+	<Compile Include="tags\FormTag.cs" />
+	<Compile Include="util\NodeList.cs" />
+	<Compile Include="scanners\BaseHrefScanner.cs" />
+	<Compile Include="scanners\BodyScanner.cs" />
+	<Compile Include="visitors\NodeVisitor.cs" />
+	<Compile Include="tags\InputTag.cs" />
+	<Compile Include="util\LinkProcessor.cs" />
+	<Compile Include="scanners\HeadScanner.cs" />
+	<Compile Include="tags\BaseHrefTag.cs" />
+	<Compile Include="tags\Tag.cs" />
+	<Compile Include="visitors\StringFindingVisitor.cs" />
+	<Compile Include="tags\Div.cs" />
+	<Compile Include="scanners\DivScanner.cs" />
+	<Compile Include="parserHelper\StringParser.cs" />
+	<Compile Include="util\NodeIterator.cs" />
+	<Compile Include="tags\Bullet.cs" />
+	<Compile Include="NodeReader.cs" />
+	<Compile Include="scanners\HtmlScanner.cs" />
+	<Compile Include="tags\data\CompositeTagData.cs" />
+	<Compile Include="tags\data\LinkData.cs" />
+	<Compile Include="scanners\MetaTagScanner.cs" />
+	<Compile Include="tags\CompositeTag.cs" />
+	<Compile Include="tags\Html.cs" />
+	<Compile Include="tags\data\TagData.cs" />
+	<Compile Include="StringTokenizer.cs" />
+	<Compile Include="parserHelper\CompositeTagScannerHelper.cs" />
+	<Compile Include="tags\BodyTag.cs" />
+	<Compile Include="util\ParserUtils.cs" />
+	<Compile Include="util\NoFeedback.cs" />
+	<Compile Include="tags\MetaTag.cs" />
+	<Compile Include="parserHelper\AttributeParser.cs" />
+	<Compile Include="scanners\ImageScanner.cs" />
+	<Compile Include="parserHelper\ParserHelper.cs" />
+	<Compile Include="AbstractNode.cs" />
+	<Compile Include="util\ParserFeedback.cs" />
+	<Compile Include="scanners\InputTagScanner.cs" />
+	<Compile Include="scanners\BulletScanner.cs" />
+	<Compile Include="Properties\AssemblyInfo.cs" />
+	<Compile Include="scanners\TagScanner.cs" />
+	<Compile Include="StringNode.cs" />
+	<Compile Include="RemarkNodeParser.cs" />
+	</ItemGroup>
+<ItemGroup>
+	</ItemGroup>
+<ItemGroup>
+	<Folder Include="Properties" />
+</ItemGroup>
+<Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+<!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+	Other similar extension points exist, see Microsoft.Common.targets.
+<Target Name="BeforeBuild">
+</Target>
+<Target Name="AfterBuild">
+</Target>
+-->
+</Project>

@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+Project("{CCCBD62A-3F2D-4BC0-9F1A-C68629A0C81C}") = "AbstractFactory.Tests", "AbstractFactory.Tests/AbstractFactory.Tests-VS2013.csproj", "{04B31A4F-03CB-4825-8332-B556F3A85408}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7AFA6ED5-7F0B-43AD-A2CE-E7C2F34BBD38} = {7AFA6ED5-7F0B-43AD-A2CE-E7C2F34BBD38}
+	EndProjectSection
+EndProject
+Project("{CCCBD62A-3F2D-4BC0-9F1A-C68629A0C81C}") = "AbstractFactory", "AbstractFactory/AbstractFactory-VS2013.csproj", "{7AFA6ED5-7F0B-43AD-A2CE-E7C2F34BBD38}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{04B31A4F-03CB-4825-8332-B556F3A85408}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04B31A4F-03CB-4825-8332-B556F3A85408}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AFA6ED5-7F0B-43AD-A2CE-E7C2F34BBD38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AFA6ED5-7F0B-43AD-A2CE-E7C2F34BBD38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

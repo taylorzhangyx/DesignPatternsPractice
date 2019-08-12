@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{C1C39E04-1FB0-45C7-A194-9EED0341E841}") = "AbstractFactory.Tests", "AbstractFactory.Tests/AbstractFactory.Tests-VS2017.csproj", "{32F231F6-3894-4D77-B6DE-9DCD3114D68C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BD8AD3D5-8103-47F9-B180-B6B74933ED18} = {BD8AD3D5-8103-47F9-B180-B6B74933ED18}
+	EndProjectSection
+EndProject
+Project("{C1C39E04-1FB0-45C7-A194-9EED0341E841}") = "AbstractFactory", "AbstractFactory/AbstractFactory-VS2017.csproj", "{BD8AD3D5-8103-47F9-B180-B6B74933ED18}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{32F231F6-3894-4D77-B6DE-9DCD3114D68C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32F231F6-3894-4D77-B6DE-9DCD3114D68C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD8AD3D5-8103-47F9-B180-B6B74933ED18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD8AD3D5-8103-47F9-B180-B6B74933ED18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
